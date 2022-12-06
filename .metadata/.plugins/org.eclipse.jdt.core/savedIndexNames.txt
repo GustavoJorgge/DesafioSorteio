@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\Gustavo Jorge\Documents\programas\Qualified\sorteio\.metadata\.plugins\org.eclipse.jdt.core
+3428144845.index

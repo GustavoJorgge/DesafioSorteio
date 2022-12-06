@@ -1,0 +1,35 @@
+
+public class Sorteio {
+
+	public static void main(String[] args) {
+		
+		int percentual [] = new int [11];
+		int Chance [] = new int [11]; //vetor para armazenar as horas para chances
+		boolean assinante [] = {true, false, false, true, false, true, true, false, false, false, false, false};
+		int tempo [] = {6144, 2742, 330, 30, 1500, 4032, 24036, 3288, 2076, 24540, 4716};
+		int HorasAssistidas [] = new int[11]; //Vetor que recebe a conversao	
+		int SomaChance = 0; //somando a quantidade de horas
+		
+		for(int i = 0 ; i < tempo.length ; i++) {
+			HorasAssistidas[i] = (int) Math.ceil((double)tempo[i]/60); // Transformando minutos em horas
+			if( assinante[i]) { 
+				Chance[i] += (HorasAssistidas[i] * 2);
+				SomaChance += (HorasAssistidas[i] * 2);//multiplicando os assinantes por 2
+			}else {
+				Chance[i] += HorasAssistidas[i];
+				SomaChance += HorasAssistidas[i]; // Se nao for assinante nao multiplica
+			}			
+		}
+		
+		for(int i = 0 ; i < tempo.length ; i++) {
+			percentual[i] = (int) Math.ceil((double)(Chance[i]*100)/SomaChance);
+		}			
+	
+		
+		System.out.printf("\nPercentual para ser sorteado:");
+		for(int i = 0 ; i < tempo.length ; i++) { //imprimindo os arrays			
+			System.out.printf("[%d]",percentual[i]);
+		}
+	}
+
+}
